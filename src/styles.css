@@ -6,11 +6,9 @@
   --card: #0f1720;
   --text: #e6eef6;
   --muted: #9aa6b2;
-  --accent: #7b5a57;
-  --accent-soft: rgba(123,90,87,0.12);
-    /* improve accent for readability on dark background */
-    --accent: #5b8fd6;
-    --accent-soft: rgba(91,143,214,0.12);
+  --accent: #5b8fd6; /* accessible accent for dark surfaces */
+  --accent-soft: rgba(91, 143, 214, 0.12);
+  --border: rgba(255, 255, 255, 0.06);
   font-family: 'Manrope', 'Segoe UI', sans-serif;
   line-height: 1.6;
   font-weight: 400;
@@ -44,21 +42,21 @@ h1,
 h2 {
   font-family: 'Playfair Display', 'Times New Roman', serif;
   margin: 0 0 0.65rem;
-    color: var(--muted);
+  color: var(--text);
 }
 
 h3 {
-
-  .nav-link {
-    transition: background 0.18s ease, color 0.12s ease;
-  }
-
-  .btn-primary:active,
-  .btn-primary:focus {
-    transform: translateY(1px);
-  }
   margin: 0 0 0.5rem;
   font-weight: 700;
+}
+
+.nav-link {
+  transition: background 0.18s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  transform: translateY(1px);
 }
 
 p {
@@ -421,7 +419,7 @@ ul {
   padding: 0.7rem 0.9rem;
   font-weight: 700;
   cursor: pointer;
-  min-width: 180px;
+  min-width: 0;
   transition: all 0.2s ease;
 }
 
@@ -521,6 +519,100 @@ ul {
   font-size: 0.8rem;
 }
 
+/* Memorial warnings and distortion */
+.memorial-warning {
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+.memorial-warning.strong {
+  border-color: rgba(255,0,60,0.16);
+  background: linear-gradient(90deg, rgba(255,0,60,0.04), rgba(255,140,0,0.02));
+  color: #ffdcdc;
+}
+.memorial-warning.subtle {
+  opacity: 0.9;
+}
+.code-input {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+}
+.distorted {
+  transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
+}
+
+/* Suicide clock pixel styles */
+.pixel-screen {
+  display: flex;
+  justify-content: center;
+}
+.pixel-grid {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  max-width: 720px;
+}
+.pixel {
+  aspect-ratio: 1 / 1;
+  background: rgba(255,255,255,0.02);
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+.pixel--filled {
+  background: linear-gradient(180deg, rgba(255,80,80,0.85), rgba(160,20,20,0.95));
+  box-shadow: 0 1px 2px rgba(0,0,0,0.6) inset;
+}
+
+/* Attempt counter styles */
+.attempt-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  border: 1px solid rgba(255,255,255,0.03);
+  min-width: 320px;
+}
+.attempt-count {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.attempt-label {
+  font-weight: 700;
+  color: var(--muted);
+}
+.attempt-since {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.big-semicolon {
+  font-size: 6rem;
+  text-align: center;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.big-semicolon--visible {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--accent);
+  text-shadow: 0 0 25px rgba(91,143,214,0.45);
+}
+
 @media (min-width: 720px) {
   .app-header {
     padding: 1rem 2rem;
@@ -542,4 +634,28 @@ ul {
   .pressure-card {
     padding: 1.25rem 1.35rem;
   }
+
+  /* Resource section layout: controls on top, cards in a responsive grid */
+  .resource-section {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .resource-grid {
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Small-screen resource grid */
+.resource-section {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.resource-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr;
 }

@@ -5,64 +5,62 @@ const LearnPage = () => {
         <p className="eyebrow">Learn</p>
         <h1>Why these pressures hurt</h1>
         <p className="lede">
-          These notes are not medical advice. They simply explain why heartbreak, burnout, body image
-          struggles, and panic can feel so intense, and why none of it means you are weak.
+          These notes are not medical advice. They explain why someone might feel pulled toward self-harm,
+          restriction, or withdrawal, and why none of this makes you weak. If any of this feels close to
+          home, talking with a professional is a healthy step.
         </p>
       </section>
 
       <section className="learn-section">
-        <h2>Mechanisms of acute distress</h2>
+        <h2>Why someone might think about self-harm</h2>
         <p>
-          Acute emotional distress after events such as relationship separation commonly activates the
-          sympathetic nervous system and related neuroendocrine systems (e.g., elevated cortisol). This
-          can lead to physiological symptoms including tachycardia, chest tightness, sleep disruption,
-          and intrusive recollection.
+          Self-harm thoughts often show up when emotional pain feels too big to hold and words feel
+          impossible. The nervous system goes into alarm mode, and hurting the body can seem like the only
+          way to release pressure or feel something different.
         </p>
         <p>
-          These responses are well-described in stress-research literature and reflect adaptive alarm
-          systems rather than moral failure. If symptoms persist, evidence-based interventions include
-          psychological therapies (CBT, trauma-focused approaches) and, where indicated, clinical
-          assessment for medication.
+          This urge is a signal for support, not a personal failure. Safer alternatives—like grounding,
+          breath work, or talking with someone—can lower the intensity. Professional help adds structure
+          and safety plans tailored to you.
         </p>
       </section>
 
       <section className="learn-section">
-        <h2>Caregiver fatigue and burnout</h2>
+        <h2>Why restriction and starvation can feel “in control”</h2>
         <p>
-          Repeated exposure to others' crises without sufficient recovery produces allostatic load and
-          increases risk of emotional exhaustion, disengagement, and decreased cognitive flexibility.
-          Organizational and interpersonal limits (clear boundaries, scheduled rest) reduce this risk.
+          When life feels chaotic, controlling food or shrinking your body can feel like the only thing
+          that is manageable. Hunger can be misread as discipline or worth. This is a common, dangerous
+          coping pattern—not a badge of strength.
         </p>
         <p>
-          Clinical approaches focus on workload adjustment, peer support, and structured self-care; when
-          impairment occurs, consult occupational health or a mental health professional.
-        </p>
-      </section>
-
-      <section className="learn-section">
-        <h2>Body image and disordered eating</h2>
-        <p>
-          Experiencing loss of control in other domains may precipitate restrictive eating or compensatory
-          behaviors in some individuals. Disordered eating increases risk for metabolic and cardiac
-          complications and warrants assessment by healthcare professionals.
-        </p>
-        <p>
-          Treatment pathways include nutritional rehabilitation, psychotherapy (e.g., CBT-E, MANTRA), and
-          multidisciplinary medical monitoring when needed.
+          Bodies need steady nourishment to regulate mood and stress. If you notice restrictive thoughts,
+          loop in a doctor, dietitian, or therapist early. Support is about protecting your health, not
+          judging you.
         </p>
       </section>
 
       <section className="learn-section">
-        <h2>Panic, dissociation, and blackouts</h2>
+        <h2>Heartbreak, abandonment, and panic</h2>
         <p>
-          Intense stress can produce panic attacks, transient dissociative experiences, and memory gaps.
-          These phenomena are associated with acute autonomic hyperarousal and should be evaluated when
-          recurrent or impairing. Immediate strategies include grounding and paced breathing; longer-term
-          care is provided via psychotherapy and, if appropriate, medication.
+          Losing someone you trusted can feel like withdrawal. Your brain may treat silence as danger,
+          causing tightness in your chest, racing thoughts, or dissociation. These are protective reactions
+          to hurt, not proof that you are broken.
         </p>
         <p>
-          If episodes include loss of consciousness or medically unexplained blackouts, seek medical
-          evaluation to rule out neurological or cardiological causes.
+          Panic often lessens when you have safe people to sit with you, plus simple tools like paced
+          breathing. Ongoing panic is worth discussing with a clinician who can tailor care.
+        </p>
+      </section>
+
+      <section className="learn-section">
+        <h2>Helper burnout and worth tied to output</h2>
+        <p>
+          Being the “strong friend” or tying your value to productivity can push you past healthy limits.
+          When rest feels unsafe, your body may force a shutdown: numbness, irritability, or fog.
+        </p>
+        <p>
+          Boundaries, rest, and asking for help are skills, not weaknesses. Peer support and professional
+          guidance can rebuild capacity so you are not burning out in silence.
         </p>
       </section>
     </main>

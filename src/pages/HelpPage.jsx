@@ -21,6 +21,12 @@ const HelpPage = () => {
           If you are in the United States, you can reach a free 24/7 crisis line by dialing 988. If you are
           elsewhere, search online for a crisis line or mental health helpline in your country.
         </p>
+        <p>Other examples (check what is active in your region):</p>
+        <ul className="help-list">
+          <li>Crisis Text Line (US/Canada/UK/Ireland): text HOME to 741741 (or 686868 in Canada).</li>
+          <li>Local hospital or doctor: ask for a same-day visit if you feel unsafe.</li>
+          <li>Campus or workplace support lines if available.</li>
+        </ul>
       </section>
 
       <section className="help-section">

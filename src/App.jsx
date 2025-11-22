@@ -3,9 +3,9 @@ import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
 import Home from './pages/Home.jsx';
 import LearnPage from './pages/LearnPage.jsx';
-import PressuresPage from './pages/PressuresPage.jsx';
 import HelpPage from './pages/HelpPage.jsx';
 import MemorialPage from './pages/MemorialPage.jsx';
+import PressuresPage from './pages/PressuresPage.jsx';
 
 const App = () => {
   return (

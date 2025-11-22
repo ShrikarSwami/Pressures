@@ -1,179 +1,95 @@
-import { useEffect, useRef, useState } from 'react';
-import messages from '../data/memorialMessages.js';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const ATTEMPTS_PER_MINUTE = 20; // illustrative estimate; not real-time data
+const ATTEMPTS_PER_SECOND = ATTEMPTS_PER_MINUTE / 60;
 
 const MemorialPage = () => {
-  // seconds since start (visual timer)
-  const [count, setCount] = useState(0);
-  const [grains, setGrains] = useState([]);
-  const [paused, setPaused] = useState(false);
-  const [revealed, setRevealed] = useState(false);
-  const intervalRef = useRef(null);
-  const nextTickRef = useRef(Date.now() + intervalMs);
-  const [nextIn, setNextIn] = useState(Math.round(intervalMs / 1000));
+  const startRef = useRef(Date.now());
+  const semicolonRef = useRef(null);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [semicolonVisible, setSemicolonVisible] = useState(false);
 
-  const WHO_TOTAL = 703000; // baseline deaths/year (WHO 2019)
-  const MALE_SHARE = 0.75; // 75% male share
-  const secondsPerYear = 365 * 24 * 60 * 60;
-  const secondsPerDeath = secondsPerYear / (WHO_TOTAL * MALE_SHARE);
-  const intervalMs = Math.round(secondsPerDeath * 1000);
-
-  useEffect(() => {
-    if (paused) return;
-    // spawn one grain at the real-data interval
-    intervalRef.current = setInterval(() => {
-      setCount((c) => c + 1);
-      setGrains((g) => [
-        ...g,
-        { id: Date.now() + Math.random(), left: 50 + (Math.random() - 0.5) * 60 },
-      ].slice(-200));
-      nextTickRef.current = Date.now() + intervalMs;
-      setNextIn(Math.round(intervalMs / 1000));
-    }, intervalMs);
-
-    return () => clearInterval(intervalRef.current);
-  }, []);
-
-  // Pause/resume effect
-  useEffect(() => {
-    if (paused) {
-      clearInterval(intervalRef.current);
-    } else {
-      // restart interval
-      clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(() => {
-        setCount((c) => c + 1);
-        setGrains((g) => [
-          ...g,
-          { id: Date.now() + Math.random(), left: 50 + (Math.random() - 0.5) * 60 },
-        ].slice(-200));
-        nextTickRef.current = Date.now() + intervalMs;
-        setNextIn(Math.round(intervalMs / 1000));
-      }, intervalMs);
-    }
-    return () => clearInterval(intervalRef.current);
-  }, [paused]);
-
-  // reset timer and grains when user clicks through the warning (so the timer restarts visually)
-  const handleReveal = () => {
-    setRevealed(true);
-    setCount(0);
-    setGrains([]);
-    // restart interval immediately
-    clearInterval(intervalRef.current);
-    nextTickRef.current = Date.now() + intervalMs;
-    setNextIn(Math.round(intervalMs / 1000));
-    if (!paused) {
-      intervalRef.current = setInterval(() => {
-        setCount((c) => c + 1);
-        setGrains((g) => [
-          ...g,
-          { id: Date.now() + Math.random(), left: 50 + (Math.random() - 0.5) * 60 },
-        ].slice(-200));
-        nextTickRef.current = Date.now() + intervalMs;
-        setNextIn(Math.round(intervalMs / 1000));
-      }, intervalMs);
-    }
-  };
-
-  // remove grains after animation end (safe timeout)
-  useEffect(() => {
-    if (!grains.length) return;
-    const t = setTimeout(() => {
-      setGrains((g) => g.slice(1));
-    }, 2200);
-    return () => clearTimeout(t);
-  }, [grains]);
-
-  // update nextIn countdown every second so users can see activity
   useEffect(() => {
     const id = setInterval(() => {
-      const secs = Math.max(0, Math.round((nextTickRef.current - Date.now()) / 1000));
-      setNextIn(secs);
+      setElapsedSeconds(Math.floor((Date.now() - startRef.current) / 1000));
     }, 1000);
     return () => clearInterval(id);
   }, []);
 
+  useEffect(() => {
+    if (!semicolonRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setSemicolonVisible(true);
+        }
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(semicolonRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const estimatedAttempts = useMemo(
+    () => Math.max(0, Math.floor(elapsedSeconds * ATTEMPTS_PER_SECOND)),
+    [elapsedSeconds]
+  );
+
+  const formattedElapsed = useMemo(() => {
+    const minutes = Math.floor(elapsedSeconds / 60);
+    const seconds = elapsedSeconds % 60;
+    return `${minutes}m ${seconds.toString().padStart(2, '0')}s`;
+  }, [elapsedSeconds]);
+
+  const startTimeString = useMemo(() => {
+    return new Date(startRef.current).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }, []);
+
   return (
-    <main className="page memorial-vision">
+    <main className="page">
       <section className="page-header">
-        <p className="eyebrow">Memorial</p>
-        <h1 style={{ color: 'var(--text)' }}>In memory — a quiet rhythm</h1>
-        <p className="lede" style={{ color: 'var(--muted)' }}>
-          This page honors the weight and the people behind numbers. It contains sensitive content.
-          If reading feels overwhelming, please visit the <a href="/help">Help and resources</a> page.
+        <p className="eyebrow">Memorial & wake-up call</p>
+        <h1>Every minute matters</h1>
+        <p className="lede">
+          This page uses a rough, global estimate of suicide attempts. It is not real-time data, but a
+          reminder that many people struggle in silence. If this feels heavy, please pause and reach out to
+          someone or visit the Help page.
         </p>
       </section>
 
-      <div style={{ marginTop: '1rem' }}>
-        {/* Prominent crisis CTA */}
-        <div style={{ marginBottom: '1rem', padding: '1rem', borderRadius: 12, background: 'linear-gradient(90deg, rgba(255,0,60,0.06), rgba(255,140,0,0.04))', border: '1px solid rgba(255,255,255,0.04)' }}>
-          <strong style={{ color: '#ffdcdc', display: 'block', fontSize: '1.05rem' }}>If you are in crisis: </strong>
-          <div style={{ color: 'var(--muted)' }}>
-            In the United States call <a href="tel:988">988</a> for 24/7 support. Outside the U.S.,
-            find local emergency or crisis services. You can also visit the <a href="/help">Help</a> page for more resources.
-          </div>
+      <section className="learn-section memorial-vision">
+        <div className="memorial-timer">Since you opened this page at {startTimeString}:</div>
+        <div className="attempt-clock">
+          <div className="attempt-count">{estimatedAttempts.toLocaleString()}+</div>
+          <div className="attempt-label">estimated attempts</div>
+          <div className="attempt-since">Timer running: {formattedElapsed}</div>
         </div>
-
-        {/* Warning interstitial (jarring) */}
-        {!revealed && (
-          <div style={{ padding: '1rem', borderRadius: 12, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,0,0,0.12)', marginBottom: '1rem' }}>
-            <h2 style={{ margin: '0 0 0.5rem', color: '#ffdcdc' }}>Trigger warning</h2>
-            <p style={{ margin: '0 0 0.75rem', color: 'var(--muted)' }}>
-              This section contains raw accounts of grief, panic, self-harm, and suicidal thoughts.
-              Reading may be upsetting. Do not proceed if you are feeling fragile.
-            </p>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <button className="btn btn-primary" onClick={handleReveal}>
-                I understand — show me the memorial
-              </button>
-              <button className="btn" onClick={() => (window.location.href = '/help')}>
-                I need help instead
-              </button>
-            </div>
-          </div>
-        )}
-
-        <div className="memorial-timer">Time elapsed: {count} seconds — next drop in: {nextIn}s</div>
-
-        <div className="memorial-stage memorial-blur" aria-hidden>
-          <div className="bowl" aria-hidden>
-            {grains.map((grain) => (
-              <div
-                key={grain.id}
-                className="grain"
-                style={{ left: `${grain.left}%` }}
-              />
-            ))}
-          </div>
+        <p style={{ marginTop: '0.75rem', color: 'var(--muted)' }}>
+          These numbers are based on published annual estimates divided into minutes and seconds. They
+          cannot capture every story, but they can be a nudge toward checking in on ourselves and each
+          other.
+        </p>
+        <div className="memorial-warning strong">
+          If this raises crisis feelings for you, you deserve immediate support. Visit the{' '}
+          <Link to="/help" style={{ fontWeight: 700 }}>
+            Help and resources
+          </Link>{' '}
+          page or contact a crisis line now.
         </div>
+      </section>
 
-        {/* Pause / resume control */}
-        <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <button className="btn" onClick={() => setPaused((p) => !p)}>
-            {paused ? 'Resume timer' : 'Pause timer'}
-          </button>
-          <small style={{ color: 'var(--muted)' }}>Timer runs at real-world cadence (1 grain ≈ 1 male suicide).</small>
-        </div>
-
-        <section style={{ marginTop: '1rem' }}>
-          <h2 style={{ margin: '0 0 0.5rem' }}>Messages</h2>
-          <p style={{ color: 'var(--muted)' }}>
-            These anonymized excerpts were added with permission. They preserve the raw, scattered voice.
-          </p>
-
-          <div className="memorial-list">
-            {(!revealed || messages.length === 0) && (
-              <div className="memorial-card">{!revealed ? 'Messages are hidden behind a trigger warning.' : 'No messages loaded yet.'}</div>
-            )}
-            {revealed && messages.map((m) => (
-              <article key={m.id} className="memorial-card">
-                <h3 style={{ margin: '0 0 0.35rem' }}>{m.title} <small style={{ color: 'var(--muted)', fontWeight: 600 }}>[{m.id}]</small></h3>
-                <p style={{ margin: 0, color: 'var(--muted)', whiteSpace: 'pre-wrap' }}>{m.content}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-      </div>
+      <section className="help-section" ref={semicolonRef} style={{ textAlign: 'center' }}>
+        <div className={`big-semicolon ${semicolonVisible ? 'big-semicolon--visible' : ''}`}>;</div>
+        <h2 style={{ marginTop: '0.5rem' }}>The semicolon means “keep going”</h2>
+        <p>
+          Writers use a semicolon to pause and then continue a sentence. Many people use it as a symbol of
+          surviving hard chapters. You are allowed to pause, breathe, and continue — with help beside you.
+        </p>
+        <Link className="btn btn-primary" to="/help">
+          Find help now
+        </Link>
+      </section>
     </main>
   );
 };

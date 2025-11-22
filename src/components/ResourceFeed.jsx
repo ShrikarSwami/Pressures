@@ -22,7 +22,7 @@ const ResourceFeed = () => {
   }, [filter, tagFilter]);
 
   return (
-    <section className="info-grid" aria-label="Resources and experiences">
+    <section className="resource-section" aria-label="Resources and experiences">
       <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '0.5rem' }}>
         <button className="btn" onClick={() => setFilter('all')}>All</button>
         <button className="btn" onClick={() => setFilter('resources')}>Resources</button>
@@ -40,7 +40,7 @@ const ResourceFeed = () => {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gap: '0.8rem' }}>
+      <div className="resource-grid">
         {visible.map((item) => (
           <ResourceCard key={item.id} item={item} />
         ))}

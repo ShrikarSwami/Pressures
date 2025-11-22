@@ -25,9 +25,7 @@ const Header = () => {
         <NavLink to="/help" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Help
         </NavLink>
-        <NavLink to="/memorial" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-          Memorial
-        </NavLink>
+        {/* Memorial page intentionally not linked in header to avoid casual discovery */}
       </nav>
     </header>
   );
