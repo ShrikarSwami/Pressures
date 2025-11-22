@@ -5,6 +5,7 @@ import PressureCard from './PressureCard.jsx';
 import ReflectionSummary from './ReflectionSummary.jsx';
 
 const STORAGE_KEY = 'pressures-resonated';
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const PressureFeed = () => {
   const [resonatedIds, setResonatedIds] = useState(() => {
@@ -40,6 +41,15 @@ const PressureFeed = () => {
     return Array.from(new Set(categories));
   }, [resonatedIds]);
 
+  // Seed a small, stable random count per pressure for "resonates with other people".
+  const resonateSeeds = useMemo(() => {
+    const seeds = {};
+    pressures.forEach((p) => {
+      seeds[p.id] = randomInt(0, 67);
+    });
+    return seeds;
+  }, []);
+
   return (
     <div className="pressure-feed">
       {pressures.map((pressure) => {
@@ -64,6 +74,7 @@ const PressureFeed = () => {
             onResonate={() => handleResonate(pressure.id)}
             resourceLink={resourceLink}
             showNudge={showNudge}
+            resonateCount={resonateSeeds[pressure.id]}
           />
         );
       })}

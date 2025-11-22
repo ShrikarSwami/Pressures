@@ -1,5 +1,6 @@
 import PressureFeed from '../components/PressureFeed.jsx';
 import ResourceFeed from '../components/ResourceFeed.jsx';
+import ConversationCounter from '../components/ConversationCounter.jsx';
 
 const supportThreads = [
   {
@@ -48,6 +49,8 @@ const PressuresPage = () => {
           pausing is okay. You can head to the Help and resources page anytime.
         </p>
       </section>
+
+      <ConversationCounter />
       <PressureFeed />
       <section style={{ marginTop: '1rem' }}>
         <h2 style={{ margin: '0 0 0.5rem' }}>Want more than stories?</h2>

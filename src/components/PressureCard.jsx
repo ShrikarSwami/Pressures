@@ -8,6 +8,7 @@ const PressureCard = ({
   showNudge,
   source,
   resourceLink,
+  resonateCount,
 }) => {
   return (
     <article className={`pressure-card ${resonated ? 'card-resonated' : ''}`}>
@@ -48,6 +49,11 @@ const PressureCard = ({
             {resonated ? 'Saved' : 'This resonates with me'}
           </button>
         </div>
+        {resonated && (
+          <p style={{ margin: '0.35rem 0 0', color: 'var(--muted)', fontSize: '0.95rem' }}>
+            This resonates with {resonateCount} other people.
+          </p>
+        )}
       </div>
     </article>
   );
