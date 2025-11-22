@@ -11,51 +11,58 @@ const LearnPage = () => {
       </section>
 
       <section className="learn-section">
-        <h2>Heartbreak can feel like withdrawal</h2>
+        <h2>Mechanisms of acute distress</h2>
         <p>
-          When a relationship ends, your brain loses a source of safety and routine. The sudden silence can
-          trigger alarm signals, which is why your chest might feel tight or you keep checking your phone.
+          Acute emotional distress after events such as relationship separation commonly activates the
+          sympathetic nervous system and related neuroendocrine systems (e.g., elevated cortisol). This
+          can lead to physiological symptoms including tachycardia, chest tightness, sleep disruption,
+          and intrusive recollection.
         </p>
         <p>
-          Rumination and anger often show up as attempts to regain control. These reactions are common and
-          can soften when you have people around you who let you grieve without rushing you.
-        </p>
-      </section>
-
-      <section className="learn-section">
-        <h2>Why helpers burn out</h2>
-        <p>
-          Being the steady friend can train you to ignore your own needs. If you are always the fixer,
-          your nervous system rarely gets to rest, and you might feel numb or irritable once the crisis
-          call ends.
-        </p>
-        <p>
-          Boundaries are not rejection. Sharing the load and naming when you need space are skills that keep
-          you available without emptying yourself.
+          These responses are well-described in stress-research literature and reflect adaptive alarm
+          systems rather than moral failure. If symptoms persist, evidence-based interventions include
+          psychological therapies (CBT, trauma-focused approaches) and, where indicated, clinical
+          assessment for medication.
         </p>
       </section>
 
       <section className="learn-section">
-        <h2>Body image and control</h2>
+        <h2>Caregiver fatigue and burnout</h2>
         <p>
-          When life feels chaotic, controlling food or exercise can seem like the only stable thing. That
-          control can slide into harsh rules or restriction, which can harm both mood and health.
+          Repeated exposure to others' crises without sufficient recovery produces allostatic load and
+          increases risk of emotional exhaustion, disengagement, and decreased cognitive flexibility.
+          Organizational and interpersonal limits (clear boundaries, scheduled rest) reduce this risk.
         </p>
         <p>
-          Speaking to someone about body shame is difficult, especially for men who are taught to “tough it
-          out.” You deserve support and nourishment without having to earn it.
+          Clinical approaches focus on workload adjustment, peer support, and structured self-care; when
+          impairment occurs, consult occupational health or a mental health professional.
         </p>
       </section>
 
       <section className="learn-section">
-        <h2>Panic, blackouts, and dissociation</h2>
+        <h2>Body image and disordered eating</h2>
         <p>
-          Under overwhelming stress, the nervous system can slam on the brakes. That might feel like a
-          blackout, a fog, or a sudden rush of adrenaline that makes ordinary tasks impossible.
+          Experiencing loss of control in other domains may precipitate restrictive eating or compensatory
+          behaviors in some individuals. Disordered eating increases risk for metabolic and cardiac
+          complications and warrants assessment by healthcare professionals.
         </p>
         <p>
-          These are protective responses, not failures of character. Grounding, breath work, and
-          professional support can retrain the alarm system so it does not stay stuck on high alert.
+          Treatment pathways include nutritional rehabilitation, psychotherapy (e.g., CBT-E, MANTRA), and
+          multidisciplinary medical monitoring when needed.
+        </p>
+      </section>
+
+      <section className="learn-section">
+        <h2>Panic, dissociation, and blackouts</h2>
+        <p>
+          Intense stress can produce panic attacks, transient dissociative experiences, and memory gaps.
+          These phenomena are associated with acute autonomic hyperarousal and should be evaluated when
+          recurrent or impairing. Immediate strategies include grounding and paced breathing; longer-term
+          care is provided via psychotherapy and, if appropriate, medication.
+        </p>
+        <p>
+          If episodes include loss of consciousness or medically unexplained blackouts, seek medical
+          evaluation to rule out neurological or cardiological causes.
         </p>
       </section>
     </main>

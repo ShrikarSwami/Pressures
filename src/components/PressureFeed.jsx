@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import pressures from '../data/pressures.js';
+import resources from '../data/resources.js';
 import PressureCard from './PressureCard.jsx';
 import ReflectionSummary from './ReflectionSummary.jsx';
 
@@ -47,6 +48,11 @@ const PressureFeed = () => {
           pressure.category === 'Panic' ||
           pressure.category === 'Isolation' ||
           pressure.category === 'Body image';
+        // find a related resource link if available (match first overlapping tag)
+        const related = resources.find(
+          (r) => r.type === 'link' && r.tags && pressure.tags.some((t) => r.tags.includes(t))
+        );
+        const resourceLink = related ? related.url : null;
         return (
           <PressureCard
             key={pressure.id}
@@ -56,6 +62,7 @@ const PressureFeed = () => {
             tags={pressure.tags}
             resonated={resonated}
             onResonate={() => handleResonate(pressure.id)}
+            resourceLink={resourceLink}
             showNudge={showNudge}
           />
         );

@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import LearnPage from './pages/LearnPage.jsx';
 import PressuresPage from './pages/PressuresPage.jsx';
 import HelpPage from './pages/HelpPage.jsx';
+import MemorialPage from './pages/MemorialPage.jsx';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/pressures" element={<PressuresPage />} />
           <Route path="/learn" element={<LearnPage />} />
+          <Route path="/memorial" element={<MemorialPage />} />
           <Route path="/help" element={<HelpPage />} />
           <Route path="*" element={<Home />} />
         </Routes>

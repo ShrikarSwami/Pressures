@@ -1,8 +1,21 @@
-const PressureCard = ({ title, voice, explanation, tags, onResonate, resonated, showNudge }) => {
+const PressureCard = ({
+  title,
+  voice,
+  explanation,
+  tags,
+  onResonate,
+  resonated,
+  showNudge,
+  source,
+  resourceLink,
+}) => {
   return (
     <article className={`pressure-card ${resonated ? 'card-resonated' : ''}`}>
       <div className="card-content">
-        <h3 className="card-category">{title}</h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <h3 className="card-category">{title}</h3>
+          {source === 'experience' && <span className="badge-experience">Real experience</span>}
+        </div>
         <p className="card-voice">“{voice}”</p>
         <p className="card-explanation">{explanation}</p>
         {showNudge && (
@@ -20,14 +33,21 @@ const PressureCard = ({ title, voice, explanation, tags, onResonate, resonated, 
             </span>
           ))}
         </div>
-        <button
-          type="button"
-          className={`resonate-btn ${resonated ? 'resonate-btn--saved' : ''}`}
-          onClick={onResonate}
-          aria-pressed={resonated}
-        >
-          {resonated ? 'Saved' : 'This resonates with me'}
-        </button>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          {resourceLink && (
+            <a className="resonate-btn" href={resourceLink} target="_blank" rel="noreferrer">
+              Explore related resource
+            </a>
+          )}
+          <button
+            type="button"
+            className={`resonate-btn ${resonated ? 'resonate-btn--saved' : ''}`}
+            onClick={onResonate}
+            aria-pressed={resonated}
+          >
+            {resonated ? 'Saved' : 'This resonates with me'}
+          </button>
+        </div>
       </div>
     </article>
   );

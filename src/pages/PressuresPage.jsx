@@ -1,4 +1,5 @@
 import PressureFeed from '../components/PressureFeed.jsx';
+import ResourceFeed from '../components/ResourceFeed.jsx';
 
 const PressuresPage = () => {
   return (
@@ -17,6 +18,14 @@ const PressuresPage = () => {
         </p>
       </section>
       <PressureFeed />
+      <section style={{ marginTop: '1rem' }}>
+        <h2 style={{ margin: '0 0 0.5rem' }}>Want more than stories?</h2>
+        <p style={{ margin: '0 0 0.75rem', color: 'var(--muted)' }}>
+          If you want practical resources or other people's anonymized experiences, here are curated
+          items to explore.
+        </p>
+        <ResourceFeed />
+      </section>
     </main>
   );
 };
