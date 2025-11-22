@@ -1,8 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const ATTEMPTS_PER_MINUTE = 20; // illustrative estimate; not real-time data
+const ATTEMPTS_PER_MINUTE = 4; // illustrative global estimate for men; not real-time data
 const ATTEMPTS_PER_SECOND = ATTEMPTS_PER_MINUTE / 60;
+
+const formatElapsed = (seconds) => {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins}m ${secs.toString().padStart(2, '0')}s`;
+};
 
 const MemorialPage = () => {
   const startRef = useRef(Date.now());
@@ -36,39 +42,33 @@ const MemorialPage = () => {
     [elapsedSeconds]
   );
 
-  const formattedElapsed = useMemo(() => {
-    const minutes = Math.floor(elapsedSeconds / 60);
-    const seconds = elapsedSeconds % 60;
-    return `${minutes}m ${seconds.toString().padStart(2, '0')}s`;
-  }, [elapsedSeconds]);
-
-  const startTimeString = useMemo(() => {
-    return new Date(startRef.current).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  }, []);
+  const startTimeLabel = useMemo(
+    () => new Date(startRef.current).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    []
+  );
 
   return (
     <main className="page">
       <section className="page-header">
-        <p className="eyebrow">Memorial & wake-up call</p>
-        <h1>Every minute matters</h1>
+        <p className="eyebrow">Memorial</p>
+        <h1>Every moment, men are reaching for help</h1>
         <p className="lede">
-          This page uses a rough, global estimate of suicide attempts. It is not real-time data, but a
-          reminder that many people struggle in silence. If this feels heavy, please pause and reach out to
-          someone or visit the Help page.
+          This timer uses a rough global estimate of suicide attempts among men. It is not a live feed.
+          The goal is awareness, not fear. If this feels heavy, please pause and reach out to someone or
+          visit the Help page.
         </p>
       </section>
 
       <section className="learn-section memorial-vision">
-        <div className="memorial-timer">Since you opened this page at {startTimeString}:</div>
+        <div className="memorial-timer">Since you opened this page at {startTimeLabel}:</div>
         <div className="attempt-clock">
           <div className="attempt-count">{estimatedAttempts.toLocaleString()}+</div>
-          <div className="attempt-label">estimated attempts</div>
-          <div className="attempt-since">Timer running: {formattedElapsed}</div>
+          <div className="attempt-label">estimated men have attempted</div>
+          <div className="attempt-since">Timer running: {formatElapsed(elapsedSeconds)}</div>
         </div>
         <p style={{ marginTop: '0.75rem', color: 'var(--muted)' }}>
           These numbers are based on published annual estimates divided into minutes and seconds. They
-          cannot capture every story, but they can be a nudge toward checking in on ourselves and each
-          other.
+          cannot capture every story, but they are a reminder to check in on ourselves and the men around us.
         </p>
         <div className="memorial-warning strong">
           If this raises crisis feelings for you, you deserve immediate support. Visit the{' '}
@@ -81,10 +81,10 @@ const MemorialPage = () => {
 
       <section className="help-section" ref={semicolonRef} style={{ textAlign: 'center' }}>
         <div className={`big-semicolon ${semicolonVisible ? 'big-semicolon--visible' : ''}`}>;</div>
-        <h2 style={{ marginTop: '0.5rem' }}>The semicolon means “keep going”</h2>
+        <h2 style={{ marginTop: '0.5rem' }}>The semicolon means “continue”</h2>
         <p>
-          Writers use a semicolon to pause and then continue a sentence. Many people use it as a symbol of
-          surviving hard chapters. You are allowed to pause, breathe, and continue — with help beside you.
+          Writers use a semicolon to pause and then keep the sentence going. Here it is a reminder that you
+          can pause, breathe, and reach for help. You do not have to carry any of this alone.
         </p>
         <Link className="btn btn-primary" to="/help">
           Find help now

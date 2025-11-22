@@ -14,7 +14,8 @@ const messages = [
   {
     id: '2699',
     title: 'Alone',
-    content: "...i just have to exist through it all on my own (i have no freinds) [cite: 2699]",
+    content:
+      "...i just have to exist through it all on my own (i have no freinds) [cite: 2699]",
     tags: ['loneliness'],
   },
   {
@@ -27,7 +28,8 @@ const messages = [
   {
     id: '2728',
     title: 'Existing until it dulls',
-    content: "Everything happened so fast, and now I'm just existing until the pain dulls. [cite: 2728]",
+    content:
+      "Everything happened so fast, and now I'm just existing until the pain dulls. [cite: 2728]",
     tags: ['grief'],
   },
   {
@@ -90,38 +92,17 @@ const messages = [
     tags: ['panic', 'sleep'],
   },
   {
-    id: '2652-2659',
-    title: 'Dreams and staying asleep',
-    content:
-      "I have had dreams of her and my body didn't want to escape I just remained asleep even after waking up I wanted to go back. Its the reason I don't feel safe sleeping on my bed anymore... [cite: 2652, 2653, 2658, 2659]",
-    tags: ['dreams', 'trauma'],
-  },
-  {
-    id: '2911-2912',
-    title: 'Vulnerability fear',
-    content:
-      "I never feel like you’re a bad person but sometimes you’ll take things just that extra step further and it terrifies me, you have pictures of me vulnerable and thought you claim you wouldn’t do anything with them. I could never know. [cite: 2911, 2912]",
-    tags: ['vulnerability', 'trust'],
-  },
-  {
-    id: '2628-2638',
-    title: 'Self-harm and neglect',
-    content:
-      "...doesn’t develop an eating disorders and cut himself, and write on himself and have heart problems [cite: 2628, 2638]",
-    tags: ['self-harm', 'eating'],
-  },
-  {
-    id: '2650-2656',
+    id: '2652-2656',
     title: 'Hollowness',
     content:
-      "I've been getting better I am eating meals every once in a while (even if they aren't the most healthy) I donated blood because I didn't want any in my body and I like the feeling of hollowness. [cite: 2650, 2656]",
+      "I have been getting better I am eating meals every once in a while (even if they are not the most healthy) I donated blood because I did not want any in my body and I like the feeling of hollowness. [cite: 2650, 2656]",
     tags: ['self-neglect', 'recovery'],
   },
   {
     id: '2651-2657',
     title: 'Dream pulls',
     content:
-      "I just remeber that dream seeing her and hearig her voice once again kind to me I fear if my other freind didn't kick me awake in his shaky sleepy state I wouldn't want to wake up and that has happened. [cite: 2651, 2657]",
+      "I just remeber that dream seeing her and hearig her voice once again kind to me I fear if my other freind did not kick me awake in his shaky sleepy state I would not want to wake up and that has happened. [cite: 2651, 2657]",
     tags: ['dreams', 'suicidal-thoughts'],
   },
   {
@@ -152,17 +133,11 @@ const messages = [
     tags: ['self-worth'],
   },
   {
-    id: '2918-2422',
-    title: 'Holding on',
-    content:
-      "I’m making you stay with me even though I’ve hurt you multiple times it means that you love me, and you’re hoping I’ll change. [cite: 2918, 2410, 2422]",
-    tags: ['relationships', 'guilt'],
-  },
-  {
-    id: '2919-2423',
+    id: '2918-2423',
     title: 'Choosing pain',
-    content: "It means you choose pain over pleasure in the hopes I’ll be what you need. [cite: 2919, 2411, 2423]",
-    tags: ['relationships'],
+    content:
+      "I’m making you stay with me even though I’ve hurt you multiple times it means that you love me, and you’re hoping I’ll change. It means you choose pain over pleasure in the hopes I’ll be what you need. [cite: 2918, 2410, 2423]",
+    tags: ['relationships', 'guilt'],
   },
   {
     id: '2905',
@@ -191,6 +166,155 @@ const messages = [
       "I must keep the mask on forever I’m just doing a worst and worst job at doing it How can I fix it so no one things there’s anything wrong with em... [cite: 2521]",
     tags: ['masking', 'shame'],
   },
+
+
+  {
+    id: '199a',
+    title: 'Scum of the earth',
+    content:
+      "But like for real I think I might just sleep on my floor and have other people sleep on my bed so even in scum I am still serving others I just want to help others so I don’t feel so bad about myself cuz once again I am generally the scum of the earth. [cite: 199a]",
+    tags: ['sleep', 'shame'],
+  },
+  {
+    id: '199b',
+    title: 'Punishment fantasy',
+    content:
+      "I don’t study as hard as I should I don’t wor as hard as I should I don’t live as well as I should so becuase of my bad behavior I must get raped kills and thrown into the Hudson River (but not actually cuz if I die I will probably become an even bigger burden on others than I already am). [cite: 199b]",
+    tags: ['self-hate', 'violence'],
+  },
+  {
+    id: '199c',
+    title: 'Never love again',
+    content:
+      "I want to be gay because I don’t want anyone to hurt me again either that or asexual so I will never love again I got so much trauma in my life. [cite: 199c]",
+    tags: ['love', 'avoidance'],
+  },
+  {
+    id: '3a',
+    title: 'Exist until',
+    content:
+      "Everything happened so fast, and now I’m just existing until the pain dulls. I don’t really have anyone to lean on, and it’s been hard to process all of this by myself. [cite: 3a]",
+    tags: ['grief', 'isolation'],
+  },
+  {
+    id: '20a',
+    title: 'It’s over for you',
+    content:
+      "It’s over for you I think you should go to college by yourself, I don’t know who but I hope you’ll have someone who’s there for you. I can’t be that person though because I am just not that type of person. I can’t never be enough but that’s not even the issue. The issue is I don’t want keep trying. I’m too tired. [cite: 20a]",
+    tags: ['breakup', 'exhaustion'],
+  },
+  {
+    id: '20b',
+    title: 'Sick cycle',
+    content:
+      "I’m just so tired of everything it’s like we’re stuck in some sick cycle but the worst part is I’m the one who always feels like the victim. I’m not, but there is always a part of me that feels like I don’t deserve. [cite: 20b]",
+    tags: ['relationships', 'cycle'],
+  },
+  {
+    id: '20c',
+    title: 'Leak fear',
+    content:
+      "There are times I genuinely wish I could just come out and say I want to break up with you but I’m scared you’ll get mad at me and leak me or ruin me. I’ve always tried to be the bigger person but at this point it’s just my way of riding a righteous horse. [cite: 20c]",
+    tags: ['fear', 'vulnerability'],
+  },
+  {
+    id: '132a',
+    title: 'Not a burden, but',
+    content:
+      "I don’t believe that you say I’m not a burden becuase she thought I was one and she goes to NYU (Shanghai) becuase she didn’t get into the main campus. Part of me thinks that it was her ego that she didn’t get into Rutgers pharmacy so when she got into NYU SHANGHAI just so she can say she went to NYU she decided to go there. [cite: 132a]",
+    tags: ['self-worth', 'resentment'],
+  },
+  {
+    id: '132b',
+    title: 'Apple Watch evidence',
+    content:
+      "Basically I need to find out why I’m blacking out I have things on my ape watch like me going on long walks late at night or like having really high spikes in heart rate and stuff. The only factual information I have about myself is Apple Watch data and seeing my random walking paths and stuff. [cite: 132b]",
+    tags: ['dissociation', 'panic'],
+  },
+  {
+    id: '75a',
+    title: 'Dark passenger',
+    content:
+      "I’m going to become my dark passenger. [cite: 75a]",
+    tags: ['identity', 'darkness'],
+  },
+  {
+    id: '66a',
+    title: 'Erased future',
+    content:
+      "I keep thinking about how easily you said you didn’t see me in your future. You got to move on and build that future, while I was left trying to erase you from everything around me. The walls, the photos, even the air in my room feel like they still belong to you. [cite: 66a]",
+    tags: ['grief', 'future'],
+  },
+  {
+    id: '3001',
+    title: 'Going through the motions',
+    content:
+      "Most days I feel like I'm just going through the motions, pretending everything is fine so no one asks questions I don’t know how to answer. [cite: 3001]",
+    tags: ['masking', 'numbness'],
+  },
+  {
+    id: '3002',
+    title: 'Heavy chest',
+    content:
+      "My chest feels heavy all the time, like there’s a weight sitting on my lungs, and no matter how deep I breathe it never really goes away. [cite: 3002]",
+    tags: ['anxiety', 'panic'],
+  },
+  {
+    id: '3003',
+    title: 'Losing pieces of myself',
+    content:
+      "Every time I try to explain how I feel I lose a little more of myself in the process, like I’m handing out pieces of me and there’s nothing coming back. [cite: 3003]",
+    tags: ['exhaustion', 'isolation'],
+  },
+  {
+    id: '3004',
+    title: 'Muted future',
+    content:
+      "I used to picture my future in color, now it’s just static, like someone turned the brightness all the way down and walked away. [cite: 3004]",
+    tags: ['future', 'numbness'],
+  },
+  {
+    id: '3005',
+    title: 'Crowded and alone',
+    content:
+      "I can be surrounded by people and still feel like I’m screaming into a soundproof room. Everyone sees me, but it feels like no one really hears me. [cite: 3005]",
+    tags: ['loneliness', 'invisibility'],
+  },
+  {
+    id: '3006',
+    title: 'Apology body',
+    content:
+      "My whole life feels like an apology. The way I talk, the way I move, the way I exist. I’m always bracing for the moment someone gets tired of me. [cite: 3006]",
+    tags: ['shame', 'self-worth'],
+  },
+  {
+    id: '3007',
+    title: 'Echoes',
+    content:
+      "Your words don’t live in my head, they echo in everything I do. I keep trying to prove them wrong and somehow keep proving them right. [cite: 3007]",
+    tags: ['grief', 'rumination'],
+  },
+  {
+    id: '3008',
+    title: 'Pretend strong',
+    content:
+      "Everyone tells me I’m strong, but they only ever see me after I’ve already survived the worst of it. They never see the nights I almost didn’t. [cite: 3008]",
+    tags: ['strength', 'hidden-pain'],
+  },
+  {
+    id: '3009',
+    title: 'Tired of starting over',
+    content:
+      "I’m so tired of starting over, of rebuilding myself from whatever’s left. It feels like every time I stand up, life just whispers, ‘not yet’ and knocks me back down. [cite: 3009]",
+    tags: ['exhaustion', 'cycle'],
+  },
+  {
+    id: '3010',
+    title: 'Learning to stay',
+    content:
+      "I keep telling myself that maybe staying is its own kind of bravery, that waking up and choosing to try again counts for something. I hope one day I believe that. [cite: 3010]",
+    tags: ['healing', 'endurance'],
+  }
 ];
 
 export default messages;

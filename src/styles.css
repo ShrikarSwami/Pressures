@@ -136,6 +136,20 @@ ul {
   background: rgba(255,255,255,0.02);
 }
 
+.semicolon-link {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.05);
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding-inline: 0.85rem;
+}
+
+.semicolon-link.active {
+  background: rgba(91,143,214,0.2);
+  border-color: rgba(91,143,214,0.5);
+}
+
 .page-shell {
   width: min(1080px, 100%);
   margin: 0 auto;
@@ -599,7 +613,7 @@ ul {
 .big-semicolon {
   font-size: 6rem;
   text-align: center;
-  color: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.15);
   line-height: 1;
   transform: translateY(10px);
   opacity: 0;
@@ -609,8 +623,8 @@ ul {
 .big-semicolon--visible {
   opacity: 1;
   transform: translateY(0);
-  color: var(--accent);
-  text-shadow: 0 0 25px rgba(91,143,214,0.45);
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.55), 0 0 36px rgba(91, 143, 214, 0.25);
 }
 
 @media (min-width: 720px) {

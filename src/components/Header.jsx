@@ -25,7 +25,15 @@ const Header = () => {
         <NavLink to="/help" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Help
         </NavLink>
-        {/* Memorial page intentionally not linked in header to avoid casual discovery */}
+        <NavLink
+          to="/memorial"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active semicolon-link' : 'nav-link semicolon-link'
+          }
+          aria-label="Memorial and awareness page"
+        >
+          ;
+        </NavLink>
       </nav>
     </header>
   );
