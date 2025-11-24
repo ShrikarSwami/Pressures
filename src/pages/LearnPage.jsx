@@ -63,6 +63,75 @@ const LearnPage = () => {
           guidance can rebuild capacity so you are not burning out in silence.
         </p>
       </section>
+
+      <section className="learn-section">
+        <h2>External resources</h2>
+        <p>
+          These links go to trusted organizations that share information about mental health, coping tools,
+          and ways to find support. If any of these feel useful, it can help to bookmark them and come back
+          when you have more energy.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://988lifeline.org"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              988 Suicide and Crisis Lifeline (United States)
+            </a>
+            : Free, confidential support for people in emotional distress or crisis.
+          </li>
+          <li>
+            <a
+              href="https://headsupguys.org"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              HeadsUpGuys
+            </a>
+            : A mens mental health resource with articles, self checks, and recovery stories.
+          </li>
+          <li>
+            <a
+              href="https://us.movember.com/mens-health/mental-health"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Movember mens mental health
+            </a>
+            : Information on looking after mens mental health and supporting others.
+          </li>
+          <li>
+            <a
+              href="https://www.nimh.nih.gov/health/topics/men-and-mental-health"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              NIMH: Men and mental health
+            </a>
+            : Research based information about mental health challenges in men and how to get help.
+          </li>
+          <li>
+            <a
+              href="https://adaa.org/find-help/by-demographics/mens-mental-health"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              ADAA: Mens mental health
+            </a>
+            : Articles and guidance on anxiety, depression, and other conditions in men.
+          </li>
+        </ul>
+        <p>
+          If you are outside the United States, you can search for a crisis line or mental health helpline in
+          your country, or talk with a local doctor or counselor about what support is available near you.
+        </p>
+        <p className="learn-footnote">
+          These sites are external resources. They are not affiliated with this project, but they may be
+          helpful starting points if you are looking for information or support.
+        </p>
+      </section>
     </main>
   );
 };

@@ -179,7 +179,7 @@ const messages = [
     id: '199b',
     title: 'Punishment fantasy',
     content:
-      "I don’t study as hard as I should I don’t wor as hard as I should I don’t live as well as I should so becuase of my bad behavior I must get raped kills and thrown into the Hudson River (but not actually cuz if I die I will probably become an even bigger burden on others than I already am). [cite: 199b]",
+      "I don’t study as hard as I should I don’t wor as hard as I should I don’t live as well as I should so becuase of my bad behavior I must get raped kills and thrown into the H##### River (but not actually cuz if I die I will probably become an even bigger burden on others than I already am). [cite: 199b]",
     tags: ['self-hate', 'violence'],
   },
   {
@@ -221,14 +221,14 @@ const messages = [
     id: '132a',
     title: 'Not a burden, but',
     content:
-      "I don’t believe that you say I’m not a burden becuase she thought I was one and she goes to NYU (Shanghai) becuase she didn’t get into the main campus. Part of me thinks that it was her ego that she didn’t get into Rutgers pharmacy so when she got into NYU SHANGHAI just so she can say she went to NYU she decided to go there. [cite: 132a]",
+      "I don’t believe that you say I’m not a burden becuase she thought I was one and she goes to N## (S#######) becuase she didn’t get into the main campus. Part of me thinks that it was her ego that she didn’t get into R##### pharmacy so when she got into N## S####### just so she can say she went to N## she decided to go there. [cite: 132a]",
     tags: ['self-worth', 'resentment'],
   },
   {
     id: '132b',
     title: 'Apple Watch evidence',
     content:
-      "Basically I need to find out why I’m blacking out I have things on my ape watch like me going on long walks late at night or like having really high spikes in heart rate and stuff. The only factual information I have about myself is Apple Watch data and seeing my random walking paths and stuff. [cite: 132b]",
+      "Basically I need to find out why I’m blacking out I have things on my watch like me going on long walks late at night or like having really high spikes in heart rate and stuff. The only factual information I have about myself is data from that watch and seeing my random walking paths and stuff. [cite: 132b]",
     tags: ['dissociation', 'panic'],
   },
   {
@@ -314,7 +314,77 @@ const messages = [
     content:
       "I keep telling myself that maybe staying is its own kind of bravery, that waking up and choosing to try again counts for something. I hope one day I believe that. [cite: 3010]",
     tags: ['healing', 'endurance'],
-  }
+  },
+  {
+    id: '3011',
+    title: 'Alexa betrayal',
+    content:
+      "I noticed this picture showing up on my Alexa, her smiling with that guy, and she even has a playlist with him. She told me he was just her gay friend, but clearly not. She lied to me and cheated on me and now I am stuck staring at this photo on a random device like it is proof I was never enough. [cite: 3011]",
+    tags: ['betrayal', 'cheating'],
+  },
+  {
+    id: '3012',
+    title: 'Cheating replay',
+    content:
+      "So basically the guy I saw a picture of her cheating on me with, I went back through our messages from when she said he was just her gay friend. I reacted to the picture with eye emojis and a lie emoji without realizing it would show up again later. Now I keep replaying that moment and part of me liked pressing send and part of me is just scared of what it means. [cite: 3012]",
+    tags: ['cheating', 'rumination'],
+  },
+  {
+    id: '3013',
+    title: 'Cousins in the background',
+    content:
+      "My cousins keep telling me I am right, that I should do whatever I need to feel better, even if it is petty. They hype me up to make bad decisions instead of telling me to calm down, and a part of me loves the validation even though I know they are just handing me more gasoline for a fire I already cannot control. [cite: 3013]",
+    tags: ['family', 'validation', 'impulse'],
+  },
+  {
+    id: '3014',
+    title: 'Watching it all from outside',
+    content:
+      "Sometimes it feels like I am outside my own body watching myself spiral over this girl who cheated on me, like I am just a character in a show who keeps making the wrong choices. I see myself scrolling, zooming in on photos, rereading messages, and I still do not hit stop. I just keep going until I feel sick. [cite: 3014]",
+    tags: ['dissociation', 'cheating', 'compulsion'],
+  },
+  {
+    id: '3015',
+    title: 'Floor again',
+    content:
+      "Back on the floor again cuz the bed feels like a crime scene and I do not want to remember any of it. [cite: 3015]",
+    tags: ['sleep', 'avoidance'],
+  },
+  {
+    id: '3016',
+    title: 'Staring at the ceiling',
+    content:
+      "I just stare at the ceiling and wait for the night to be over, hoping the next day will hurt a little less and knowing it probably will not. [cite: 3016]",
+    tags: ['insomnia', 'numbness'],
+  },
+  {
+    id: '3017',
+    title: 'Laughing it off',
+    content:
+      "I turn everything into a joke so no one asks why my hands are shaking or why I keep zoning out in the middle of sentences. [cite: 3017]",
+    tags: ['masking', 'anxiety'],
+  },
+  {
+    id: '3018',
+    title: 'Everywhere at once',
+    content:
+      "My mind is everywhere at once, replaying her, replaying the fights, replaying the moments I should have walked away and never did. [cite: 3018]",
+    tags: ['rumination', 'relationships'],
+  },
+  {
+    id: '3019',
+    title: 'Texts I never send',
+    content:
+      "I draft paragraphs to her in my notes app, then delete them before I even think about pressing send. It is like I only exist in unsent messages. [cite: 3019]",
+    tags: ['communication', 'silence'],
+  },
+  {
+    id: '3020',
+    title: 'Body as evidence',
+    content:
+      "My body is just evidence of everything I put it through, the dark circles, the weight changes, the random bruises from nights I barely remember. [cite: 3020]",
+    tags: ['body', 'self-neglect'],
+  },
 ];
 
 export default messages;
