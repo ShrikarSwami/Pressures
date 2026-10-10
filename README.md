@@ -15,6 +15,8 @@ If you are in crisis, please seek real-world help immediately.
 
 ---
 
+**Demo Video:** https://youtu.be/C0HojKujpl0
+
 # Pressures
 
 Pressures is a mobile-first Vite + React web app that surfaces the emotional pressures men often carry in silence. Anonymous fragments are paired with simple explanations, reflection tools, and curated crisis resources. The interface is designed to be quiet, respectful, and direct—while the memorial page highlights how urgent unseen suffering can be.
